@@ -94,16 +94,16 @@ asyncFunction();
 ```js
 const promise = new Promise((resolve, reject) => {
   setTimeout(() => {
-    reject(new Error('Something went wrong!'));
+    reject(new Error('Something went wrong! - after 1s'));
   }, 1000);
 });
 
 promise.catch((error) => {
-  console.error(error.message); // "Something went wrong!" after 1 second
+  console.error(error.message);
 });
 
 // Output
-// Something went wrong!
+// Something went wrong! - after 1s
 ```
 
 ### Question 3 - Run the following code
@@ -135,15 +135,15 @@ const promise3 = new Promise((resolve, reject) => setTimeout(reject, 1500, new E
 
 Promise.all([promise1, promise2, promise3])
   .then((results) => {
-    console.log(results); // never gets called
+    console.log(results);
   })
   .catch((error) => {
-    console.error(error.message); // "Error" after 1.5 seconds
+    console.error(error.message);
   });
 
 // Output 1:
 // Error - waiting 1.5s
 
-// Output 2:
+// Output 2 (comment rejected one): 
 // [ 'Hello - waiting 1s', 'World - waiting 2s', '! - waiting 1.5s' ]
 ```
