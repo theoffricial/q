@@ -18,11 +18,12 @@ vowel('Guitar'); // outputs: Gaitur
 
 ### 2. Modules
 
-Please run the following program, and let's discuss it.
+How does module2.js will return?
+You can run it first, if you prefer.
 
 ```js
 // module1.js
-const myVariable = myFunc();
+export const myVariable = myFunc();
 
 function myFunc() {
     return 'Hello World';
@@ -31,7 +32,17 @@ function myFunc() {
 export default myVariable;
 
 // module2.js
-const { default: myVariable } = require('./module1.js');
+const { myVariable } = require('./module1.js');
 console.log(myVariable);
+```
+
+### Question 3 - More Modules!
+
+What is the difference between the two lines when using Node.js:
+
+```js
+const myModule = require('myModule');
+// and
+import myModule from 'myModule';
 ```
 
