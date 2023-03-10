@@ -55,10 +55,10 @@ const promise3 = new Promise((resolve, reject) => {
   
 promise3.then(
     (value) => {
-        console.log(value); // This will not be called
+        console.log(value);
     },
     (error) => {
-        console.error(error.message); // "Something went wrong" after 2 seconds
+        console.error(error.message);
         return 'Recovered from error';
     }
 )
@@ -79,7 +79,7 @@ console.log('After initialing promise')
 // Async function that uses await
 const asyncFunction = async () => {
     const value = await promis4;
-    console.log(value); // "Hello, world!" after 1 second
+    console.log(value);
 };
 asyncFunction();
 
