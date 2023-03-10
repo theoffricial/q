@@ -8,7 +8,7 @@ Write a new custom `Promise` that call `IPromiseToRemainCalmOfri`,
 that should act the same as the native `Promise`, and should resolve the following examples cases the same way.
 
 ```js
-// Case 1 - Straightforward
+// Case 1 - Naive
 const promise1 = new Promise((resolve) => {
     console.log('Before resolving promise');
     resolve('Promise resolved!')
