@@ -36,13 +36,3 @@ const { myVariable } = require('./module1.js');
 console.log(myVariable);
 ```
 
-### Question 3 - More Modules!
-
-What is the difference between the two lines when using Node.js:
-
-```js
-const myModule = require('myModule');
-// and
-import myModule from 'myModule';
-```
-
