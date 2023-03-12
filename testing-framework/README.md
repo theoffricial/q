@@ -28,8 +28,8 @@ test('2nd test', () => {
 })
 ​
 test('3rd test', () => {
-   expect(2).toBe(2)
-   expect(2).toBe(1)
+   expect(3).toBe(3)
+   expect(3).toBe(2)
 })
 ```
 
@@ -38,12 +38,12 @@ test('3rd test', () => {
 ```bash
 ⛔️ 1st test failed with message: expected 'be calm', recevied '😇'.
 ✅ 2nd test passed successfully.
-⛔️ 3rd test failed with message: expected '2', recevied '1'.
+⛔️ 3rd test failed with message: expected '3', recevied '2'.
 ```
 
 --- 
 
-### 2. Enhance your framework!
+### 2. Enhance the testing framework!
 
 Add the support of the advanced feature of:
 
@@ -66,8 +66,8 @@ test.only('2nd test', () => {
 })
 ​
 test('3rd test', () => {
-   expect(2).toBe(2)
-   expect(2).toBe(1)
+   expect(3).toBe(3)
+   expect(3).toBe(2)
 })
 
 test.only('4th test', () => {
@@ -84,7 +84,10 @@ test.only('4th test', () => {
 
 ---
 
-### 3. Can you think how Jest created `jest.mock(modulePath)` syntax to work?
+### 3. Describe how `jest.mock(modulePath)` work
+
+The following code works, trust us.
+But the `jest.mock` syntax is weird, can you describe it, and think how it was implemented?
 
 #### Program
 
