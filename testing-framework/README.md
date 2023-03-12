@@ -2,20 +2,33 @@
 
 ## Questions
 
-### 1. Build `.test(name, fn)`, `.expect(value)` and `.toBe(value)`.
+### 1. Build Jest-like framework
 
-#### Program
+Implement the support of the following:
+
+* `beforeEach(beforeTestFn)` - Should run before each test.
+* `test(testName, testFn)` - Defines a test.
+* `expect(expectedValue)` - Define the expected value, tests cab support mutliple `expect`-s.
+* `.toBe(actualValue)` - match the actual value received with the expected value.
+
+#### Jest-like Program:
 
 ```ts
-it('test 1', () => {
-   expect(6).toBe(3)
+beforeEach(() => {
+   expect('🤡').toBe('🤡');
+})
+
+test('1st test', () => {
+   expect('be calm').toBe('😇');
 })
 ​
-it('test 2', () => {
+test('2nd test', () => {
+   expect(2).toBe(2)
    expect(2).toBe(2)
 })
 ​
-it('test 3', () => {
+test('3rd test', () => {
+   expect(2).toBe(2)
    expect(2).toBe(1)
 })
 ```
@@ -23,43 +36,57 @@ it('test 3', () => {
 #### Expected Output 
 
 ```bash
-⛔️ test 1 failed with message: expected 6, recevied 3.
-✅ test 2 passed successfully.
-⛔️ test 3 failed with message: expected 2, recevied 1.
+⛔️ 1st test failed with message: expected 'be calm', recevied '😇'.
+✅ 2nd test passed successfully.
+⛔️ 3rd test failed with message: expected '2', recevied '1'.
 ```
 
 --- 
 
-### 2. Build `.test.only(name, fn)`
+### 2. Enhance your framework!
 
-#### Program
+Add the support of the advanced feature of:
+
+* `test.only(testName, testFn)` - When `test.only` is defined, the jest-like framework should skip all other tests that are not defined as `.only`.
+
+#### Jest-like Program:
 
 ```ts
-it('test 1', () => {
-   expect(6).toBe(3)
+beforeEach(() => {
+   expect('🤡').toBe('🤡');
+})
+
+test('1st test', () => {
+   expect('be calm').toBe('😇');
 })
 ​
-it.only('test 2', () => {
+test.only('2nd test', () => {
+   expect(2).toBe(2)
    expect(2).toBe(2)
 })
 ​
-it('test 3', () => {
+test('3rd test', () => {
+   expect(2).toBe(2)
    expect(2).toBe(1)
+})
+
+test.only('4th test', () => {
+   expect(4).toBe(4)
 })
 ```
 
 #### Expected Output
 
 ```bash
-✅ test 2 passed successfully.
+✅ 2nd test passed successfully.
+✅ 4th test passed successfully.
 ```
 
 ---
 
-### 3. How does `jest.mock(modulePath)` work?
+### 3. Can you think how Jest created `jest.mock(modulePath)` syntax to work?
 
 #### Program
-
 
 ```ts
 // -----------------------------------------
