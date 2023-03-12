@@ -2,7 +2,7 @@
 
 ## Questions
 
-### 1. Build `.test`, `expect` and `.toBe`.
+### 1. Build `.test(name, fn)`, `.expect(value)` and `.toBe(value)`.
 
 #### Program
 
@@ -23,14 +23,14 @@ it('test 3', () => {
 #### Expected Output 
 
 ```bash
-`⛔️ test 1 failed with message: expected 6, recevied 3.`
-`✅ test 2 passed successfully.`
-`⛔️ test 3 failed with message: expected 2, recevied 1.`
+⛔️ test 1 failed with message: expected 6, recevied 3.
+✅ test 2 passed successfully.
+⛔️ test 3 failed with message: expected 2, recevied 1.
 ```
 
 --- 
 
-### 2. Build `.test.only`
+### 2. Build `.test.only(name, fn)`
 
 #### Program
 
@@ -51,28 +51,32 @@ it('test 3', () => {
 #### Expected Output
 
 ```bash
-`✅ test 2 passed successfully.`
+✅ test 2 passed successfully.
 ```
 
 ---
 
-### 3. How does `jest.mock` work?
+### 3. How does `jest.mock(modulePath)` work?
 
 #### Program
 
+
 ```ts
-// myModule.ts
+// -----------------------------------------
+// ./my-module.ts
 export function myFunc() {
     return 42;
 }
+// -----------------------------------------
+// dummy-mock.test.ts
+import { myFunc } from './my-module';
 
-import { myFunc } from './myModule';
-
-jest.mock('./myModule', () => ({
-    myFunc: () => 21;
+jest.mock('./my-module', () => ({
+    myFunc: () => 21,
 }))
 
 it('should that jest.mock works', () => {
    expect(myFunc()).toBe(21)
 })
+// -----------------------------------------
 ```

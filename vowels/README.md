@@ -7,13 +7,13 @@
 ## Program
 
 ```ts
-function vowelReverse(str: string) {
+function vowelsReverse(str: string) {
     // ...
 }
 
-vowel('Table'); // outputs: Tebla
-vowel('House'); // outputs: Heuso
-vowel('Guitar'); // outputs: Gaitur
+vowelsReverse('Table'); // should outputs: Tebla
+vowelsReverse('House'); // should outputs: Heuso
+vowelsReverse('Guitar'); // should outputs: Gaitur
 ```
 
 ### 2. Modules
@@ -31,6 +31,9 @@ function myFunc() {
 
 export default myVariable;
 
+```
+
+```js
 // module2.js
 const { myVariable } = require('./module1.js');
 console.log(myVariable);
