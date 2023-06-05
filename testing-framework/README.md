@@ -64,6 +64,7 @@ test('2nd test', () => {
 test('3rd test', () => {
    expect(3).toBe(3)
    expect(3).toBe(2)
+   expect(3).toBe(3)
 })
 ```
 
