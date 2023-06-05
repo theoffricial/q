@@ -6,7 +6,6 @@
 
 Implement the support of the following:
 
-* `beforeEach(beforeTestFn)` - Should run before each test.
 * `test(testName, testFn)` - Defines a test.
 * `expect(expectedValue)` - Define the expected value, tests cab support mutliple `expect`-s.
 * `.toBe(actualValue)` - match the actual value received with the expected value.
@@ -43,7 +42,37 @@ test('3rd test', () => {
 
 --- 
 
-### 2. Enhance the testing framework!
+### 2. Add `beforeEach(beforeTestFn)`
+
+Implement the support of the following:
+
+* `beforeEach(beforeTestFn)` - Should run before each test.
+
+#### Jest-like Program:
+
+```ts
+beforeEach(() => {
+   expect('🤡').toBe('🤡');
+})
+
+test('1st test', () => {
+   expect('be calm').toBe('😇');
+})
+​
+test('2nd test', () => {
+   expect(2).toBe(2)
+   expect(2).toBe(2)
+})
+​
+test('3rd test', () => {
+   expect(3).toBe(3)
+   expect(3).toBe(2)
+})
+```
+
+---
+
+### 3. Enhance the testing framework!
 
 Add the support of the advanced feature of:
 
@@ -84,7 +113,7 @@ test.only('4th test', () => {
 
 ---
 
-### 3. Describe how `jest.mock(modulePath)` work
+### 4. Describe how `jest.mock(modulePath)` work
 
 The following code works, trust us.
 But the `jest.mock` syntax is weird, can you describe it, and think how it was implemented?
