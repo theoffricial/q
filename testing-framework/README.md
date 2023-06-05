@@ -7,26 +7,23 @@
 Implement the support of the following:
 
 * `test(testName, testFn)` - Defines a test.
-* `expect(expectedValue)` - Define the expected value, tests cab support mutliple `expect`-s.
+* `expect(expectedValue)` - Define the expected value, tests cab support multiple `expect`-s.
 * `.toBe(actualValue)` - match the actual value received with the expected value.
 
 #### Jest-like Program:
 
 ```ts
-beforeEach(() => {
-   expect('🤡').toBe('🤡');
-})
 
-test('1st test', () => {
+test('first test', () => {
    expect('be calm').toBe('😇');
 })
 ​
-test('2nd test', () => {
+test('second test', () => {
    expect(2).toBe(2)
    expect(2).toBe(2)
 })
 ​
-test('3rd test', () => {
+test('third test', () => {
    expect(3).toBe(3)
    expect(3).toBe(2)
 })
@@ -35,9 +32,9 @@ test('3rd test', () => {
 #### Expected Output 
 
 ```bash
-⛔️ 1st test failed with message: expected 'be calm', recevied '😇'.
-✅ 2nd test passed successfully.
-⛔️ 3rd test failed with message: expected '3', recevied '2'.
+⛔️ first test failed with message: expected 'be calm', received '😇'.
+✅ second test passed successfully.
+⛔️ third test failed with message: expected '3', received '2'.
 ```
 
 --- 
