@@ -39,7 +39,7 @@ test('my wrong test', () => {
 The is what we expect to see in our console
 
 ```bash
-X my calm test: failed with message: expected 'be calm', received '😇'.
+X my calm test: failed with message: expected '123', received 'abc'.
 V my good test: passed successfully.
 X my wrong test: failed with message: expected '3', received '2'.
 ```
