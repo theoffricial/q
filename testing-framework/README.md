@@ -2,28 +2,33 @@
 
 ## Questions
 
-### 1. Build Jest-like framework
+### 1. Build a Jest-like framework
 
-Implement the support of the following:
+You need to implement the first building blocks of a Javascript testing framework:
 
-* `test(testName, testFn)` - Defines a test.
-* `expect(expectedValue)` - Define the expected value, tests cab support multiple `expect`-s.
-* `.toBe(actualValue)` - match the actual value received with the expected value.
+* `function test(testName, testFn) { ... }` - Defines a test.
+* `function expect(expectedValue) { ... }` - Define the expected value, tests support multiple `expect`s.
+* `.toBe(actualValue) { ... }` - match the actual value received with the expected value.
 
 #### Jest-like Program:
 
 ```ts
 
-test('first test', () => {
-   expect('be calm').toBe('😇');
+function test(testName, testFn) { 
+   // add your implementation
+   throw new Error("Not implemented.") 
+}
+
+test('my calm test', () => {
+   expect('123').toBe('abc');
 })
 ​
-test('second test', () => {
+test('my good test', () => {
    expect(2).toBe(2)
    expect(2).toBe(2)
 })
 ​
-test('third test', () => {
+test('my wrong test', () => {
    expect(3).toBe(3)
    expect(3).toBe(2)
 })
@@ -31,10 +36,12 @@ test('third test', () => {
 
 #### Expected Output 
 
+The is what we expect to see in our console
+
 ```bash
-⛔️ first test failed with message: expected 'be calm', received '😇'.
-✅ second test passed successfully.
-⛔️ third test failed with message: expected '3', received '2'.
+X my calm test: failed with message: expected 'be calm', received '😇'.
+V my good test: passed successfully.
+X my wrong test: failed with message: expected '3', received '2'.
 ```
 
 --- 
