@@ -22,12 +22,12 @@ function test(testName, testFn) {
 test('my calm test', () => {
    expect('123').toBe('abc');
 })
-​
+
 test('my good test', () => {
    expect(2).toBe(2)
    expect(2).toBe(2)
 })
-​
+
 test('my wrong test', () => {
    expect(3).toBe(3)
    expect(3).toBe(2)
